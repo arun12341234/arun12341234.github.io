@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Kumar | Python & AI Developer</title>
+    <meta name="description" content="Portfolio of Arun Kumar, Python developer specializing in automation plugins, RPA, and AI/ML integrations.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#14b8a6', // Teal 500
+                        primary_dark: '#0f766e', // Teal 700
+                        bg_dark: '#0f172a', // Slate 900
+                        card_dark: '#1e293b', // Slate 800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #14b8a6; 
+        }
+        
+        /* Subtle Fade In Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-bg_dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-bg_dark/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-white tracking-tighter">
+                        Arun<span class="text-primary">Kumar</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-primary transition-colors">Skills</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="px-5 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all text-sm font-medium">Contact Me</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card_dark border-b border-slate-700">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 flex flex-col">
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-primary mobile-link">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium hover:text-primary mobile-link">Skills</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium hover:text-primary mobile-link">Experience</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium hover:text-primary mobile-link">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-primary mobile-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-4xl mx-auto text-center z-10 fade-in">
+            <p class="text-primary font-medium tracking-wide mb-3">Hi, my name is</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">Arun Kumar.</h1>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-400 mb-6">I build automation pipelines & AI integrations.</h2>
+            <p class="mt-4 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                I am a Python developer with over 6 years of experience specializing in low-code RPA platforms, data connectors, and deploying machine learning models for enterprise clients.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#experience" class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary_dark text-white rounded-lg font-semibold transition-all shadow-[0_0_15px_rgba(20,184,166,0.4)]">
+                    View My Work
+                </a>
+                <a href="https://linkedin.com/in/arunkumar-1bb0b4b5" target="_blank" class="w-full sm:w-auto px-8 py-4 border border-slate-600 hover:border-slate-400 hover:text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-card_dark/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white whitespace-nowrap">About Me</h2>
+                <div class="h-[1px] w-full bg-slate-700"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
+                    <p>
+                        Hello! I'm Arun, a passionate developer based in New Delhi, India. With over <strong class="text-white">6 years of industry experience</strong>, I have dedicated my career to building robust automation plugins, efficient data connectors, and scalable web applications.
+                    </p>
+                    <p>
+                        Currently, I contribute to <strong class="text-white">ARGOS Labs</strong> and <strong class="text-white">BotPulse AutoTech</strong>, working on a low-code RPA platform. My daily work involves engineering Python plugins, creating integrations for databases like Oracle and MySQL, and building REST APIs.
+                    </p>
+                    <p>
+                        Beyond traditional backend development, I have actively ventured into the AI space—deploying pipelines using <strong class="text-primary">TensorFlow</strong> and <strong class="text-primary">Scikit-learn</strong>, and integrating LLMs to solve complex retail and financial problems.
+                    </p>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative bg-card_dark p-8 rounded-lg border border-slate-700 h-full flex flex-col justify-center">
+                        <h3 class="text-xl font-semibold text-white mb-4"><i class="fas fa-graduation-cap text-primary mr-2"></i> Education</h3>
+                        <div class="mb-4">
+                            <h4 class="text-lg text-white font-medium">B.Tech in Computer Science</h4>
+                            <p class="text-slate-400">Punjab Technical University (SUS College of Engineering and Technology, Mohali)</p>
+                            <p class="text-sm text-primary mt-1">May 2015 - May 2019</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700">
+                            <p class="text-sm text-slate-400 flex items-center gap-2"><i class="fas fa-map-marker-alt text-primary"></i> New Delhi, Delhi 110066, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white whitespace-nowrap">Technical Arsenal</h2>
+                <div class="h-[1px] w-full bg-slate-700"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Category -->
+                <div class="bg-card_dark rounded-xl p-6 border border-slate-800 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-code text-primary"></i> Languages & Web
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Python</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">TypeScript</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Django</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Flask</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Angular</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category -->
+                <div class="bg-card_dark rounded-xl p-6 border border-slate-800 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-database text-primary"></i> Databases
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Redis</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Firebase</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Oracle</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category -->
+                <div class="bg-card_dark rounded-xl p-6 border border-slate-800 hover:border-primary/50 transition-colors">
+                    <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-brain text-primary"></i> AI & ML
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">PyTorch</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">LLM APIs</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Prompt Writing</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Data Labelling</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category -->
+                <div class="bg-card_dark rounded-xl p-6 border border-slate-800 hover:border-primary/50 transition-colors md:col-span-2 lg:col-span-3">
+                    <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-tools text-primary"></i> Tools, APIs & Methodologies
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">REST APIs</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Selenium</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Automation Scripting</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">RPA Plugins</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Git</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Agile (Scrum)</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Unit Testing</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Cloud Deployment</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Payment Gateway</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-md text-sm">Google Maps Integration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-card_dark/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white whitespace-nowrap">Where I've Worked</h2>
+                <div class="h-[1px] w-full bg-slate-700"></div>
+            </div>
+
+            <div class="relative border-l border-slate-700 ml-3 md:ml-6 space-y-12">
+                
+                <!-- Experience Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-primary rounded-full -left-[8.5px] top-1.5 shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Senior Plugin Developer</h3>
+                        <span class="text-primary font-mono text-sm mt-1 md:mt-0">June 2025 - Present</span>
+                    </div>
+                    <h4 class="text-lg text-slate-400 font-medium mb-4">BotPulse AutoTech OPC Private Limited <span class="text-sm font-normal">(Branch of ARGOS Labs)</span></h4>
+                    <ul class="list-disc list-outside ml-4 space-y-2 text-slate-300">
+                        <li>Spearheading the development of advanced automation modules and overseeing plugin architecture.</li>
+                        <li>Collaborating directly with global teams to enhance low-code integration platforms.</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-slate-700 border-2 border-primary rounded-full -left-[8.5px] top-1.5"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Python Developer</h3>
+                        <span class="text-slate-400 font-mono text-sm mt-1 md:mt-0">July 2022 - Present</span>
+                    </div>
+                    <h4 class="text-lg text-slate-400 font-medium mb-4">ARGOS Labs <span class="text-sm font-normal">(San Jose, CA - Remote/Hybrid)</span></h4>
+                    <ul class="list-disc list-outside ml-4 space-y-2 text-slate-300">
+                        <li>Built Python automation scripts and plugins for the low-code RPA platform, supporting AI/ML workflows.</li>
+                        <li>Designed data connectors for Oracle, MySQL, and REST APIs, improving process efficiency by 35%.</li>
+                        <li>Contributed to a plugin framework that drastically cut third-party integration time from days to hours.</li>
+                        <li>Reduced execution time of key workflows by up to 50% through comprehensive performance optimizations.</li>
+                        <li>Deployed custom AI pipelines for retail and finance clients utilizing TensorFlow and Scikit-learn.</li>
+                        <li>Maintained strict code quality via code reviews, unit testing, and robust documentation.</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-slate-700 border-2 border-slate-500 rounded-full -left-[8.5px] top-1.5"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Python/Django and Angular Developer</h3>
+                        <span class="text-slate-500 font-mono text-sm mt-1 md:mt-0">Feb 2021 - July 2022</span>
+                    </div>
+                    <h4 class="text-lg text-slate-400 font-medium mb-4">SasconIT Technologies Pvt Ltd <span class="text-sm font-normal">(Bengaluru)</span></h4>
+                    <p class="text-slate-300">Developed full-stack web applications, integrating complex backend logic in Django with dynamic Angular frontends.</p>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-slate-700 border-2 border-slate-500 rounded-full -left-[8.5px] top-1.5"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Automation Plugin Intern</h3>
+                        <span class="text-slate-500 font-mono text-sm mt-1 md:mt-0">April 2020 - Dec 2020</span>
+                    </div>
+                    <h4 class="text-lg text-slate-400 font-medium mb-4">ARGOS Labs</h4>
+                    <p class="text-slate-300">Initiated career in RPA by developing foundational automation plugins and learning core integration strategies.</p>
+                </div>
+                
+                <!-- Additional Past Experience Wrapper to keep it concise -->
+                <div class="relative pl-8 md:pl-12 mt-6">
+                    <div class="absolute w-3 h-3 bg-slate-600 rounded-full -left-[6px] top-2"></div>
+                    <details class="group cursor-pointer">
+                        <summary class="text-slate-400 hover:text-primary transition-colors font-medium outline-none list-none flex items-center">
+                            <span>View Earlier Roles (2019 - 2020)</span>
+                            <i class="fas fa-chevron-down ml-2 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="mt-6 space-y-8 pb-4">
+                            <div>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-white font-semibold">Python/Django & Angular Developer</h4>
+                                    <span class="text-xs text-slate-500">Dec 2019 - Dec 2020</span>
+                                </div>
+                                <p class="text-sm text-slate-400">PREVA Systems Pvt Ltd, Bengaluru</p>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-white font-semibold">Python/Django & Angular Developer</h4>
+                                    <span class="text-xs text-slate-500">July 2019 - Dec 2019</span>
+                                </div>
+                                <p class="text-sm text-slate-400">Rooman Technologies, Bengaluru</p>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-white font-semibold">Python Developer</h4>
+                                    <span class="text-xs text-slate-500">Feb 2019 - May 2019</span>
+                                </div>
+                                <p class="text-sm text-slate-400">TechCiti Technologies Pvt Ltd, Bengaluru</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / AI Highlights -->
+    <section id="projects" class="py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white whitespace-nowrap">Featured Projects</h2>
+                <div class="h-[1px] w-full bg-slate-700"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project Card: Jerdon AI -->
+                <div class="bg-card_dark rounded-xl border border-slate-700 p-8 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fas fa-robot text-4xl text-primary"></i>
+                        <div class="flex gap-3">
+                            <i class="fas fa-external-link-alt text-slate-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Jerdon AI</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        A specialized AI integration project focusing on leveraging Large Language Models to interpret and process complex data structures, ensuring high output accuracy for end-users.
+                    </p>
+                    <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-300 mb-6">
+                        <li>Integrated LLM APIs into the core application workflow.</li>
+                        <li>Engineered and optimized prompts for desired model behaviors.</li>
+                        <li>Conducted thorough reviews of model outputs and labelled datasets.</li>
+                        <li>Executed rigorous model accuracy testing and validation.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">LLM APIs</span>
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Prompt Eng.</span>
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Data Validation</span>
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Python</span>
+                    </div>
+                </div>
+
+                <!-- Project Card: ML Pipelines -->
+                <div class="bg-card_dark rounded-xl border border-slate-700 p-8 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fas fa-network-wired text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Enterprise ML Pipelines</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        End-to-end development and deployment of machine learning pipelines tailored for retail and financial sector clients, operating within the ARGOS Labs ecosystem.
+                    </p>
+                    <ul class="list-disc list-outside ml-4 space-y-1 text-sm text-slate-300 mb-6">
+                        <li>Utilized TensorFlow and Scikit-learn for model creation.</li>
+                        <li>Automated repetitive enterprise tasks handling massive datasets.</li>
+                        <li>Transitioned proof-of-concept models into robust production environments.</li>
+                        <li>Created cross-functional data connectors (Oracle/MySQL) for seamless data ingestion.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">TensorFlow</span>
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Scikit-learn</span>
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Data Connectors</span>
+                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">RPA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-card_dark/50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-primary font-mono mb-4 text-sm tracking-widest uppercase">What's Next?</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
+            <p class="text-slate-400 mb-10 text-lg">
+                I am currently open to new opportunities, collaborations, and discussions regarding AI, RPA, and Backend Architecture. Whether you have a question or just want to say hi, my inbox is always open!
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="mailto:ak080495@gmail.com" class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                    <span>ak080495@gmail.com</span>
+                </a>
+                <span class="hidden md:block text-slate-600">|</span>
+                <a href="tel:9934110211" class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors">
+                    <i class="fas fa-phone-alt text-xl"></i>
+                    <span>+91 99341 10211</span>
+                </a>
+                <span class="hidden md:block text-slate-600">|</span>
+                <a href="https://linkedin.com/in/arunkumar-1bb0b4b5" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+
+            <a href="mailto:ak080495@gmail.com" class="inline-block px-10 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-semibold transition-all duration-300">
+                Say Hello
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bg_dark border-t border-slate-800 py-8 text-center">
+        <p class="text-slate-500 text-sm font-mono">
+            Designed & Built by Arun Kumar <br>
+            <span class="mt-2 inline-block text-xs">&copy; <script>document.write(new Date().getFullYear())</script> All Rights Reserved.</span>
+        </p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                // Swap icon
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu on link click
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // Navbar background opacity on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-lg', 'bg-bg_dark/95');
+                    navbar.classList.remove('bg-bg_dark/90');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'bg-bg_dark/95');
+                    navbar.classList.add('bg-bg_dark/90');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
